@@ -12,6 +12,7 @@ class CreateProject extends Component {
         title: this.title.value,
         description: this.description.value,
         deadline: this.deadline.value,
+//}
       },
       () => {
         axios
