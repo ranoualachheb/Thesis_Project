@@ -4,52 +4,6 @@ const Project = require('../../models/projectSchema');
 const User = require("../../models/userSchema").User;
 
 
-router.get('/dashboardProject', (req, res) => {
-  Project.find({}, function (err, result) {
-    if (err) {
-      res.send(err);
-    } else {
-      var x = {}
-      var arr = [];
-      var fin = 0; var acc = 0; var mark = 0; var hr = 0; var meth = 0; var it = 0;
-      var sum = result.length
-      for (var i = 0; i < result.length; i++) {
-        if (result[i].department === "Financial") { fin++ }
-        else if (result[i].department === "Accounting") { acc++ }
-        else if (result[i].department === "Marketing") { mark++ }
-        else if (result[i].department === "Human Ressources") { hr++ }
-        else if (result[i].department === "Methods") { meth++ }
-        else if (result[i].department === "IT") { it++ }
-      }
-      arr.push(fin); arr.push(acc); arr.push(mark); arr.push(hr); arr.push(meth); arr.push(it);
-      arr.push(sum);
-      res.send(arr);
-    }
-  });
-});
-
-router.get('/dashboardUser', (req, res) => {
-  User.find({}, function (err, result) {
-    if (err) {
-      res.send(err);
-    } else {
-      var arr = [];
-      var fin = 0; var acc = 0; var mark = 0; var hr = 0; var meth = 0; var it = 0
-      var sum = result.length - 1
-      for (var i = 0; i < result.length; i++) {
-        if (result[i].department === "Financial") { fin++ }
-        else if (result[i].department === "Accounting") { acc++ }
-        else if (result[i].department === "Marketing") { mark++ }
-        else if (result[i].department === "Human Ressources") { hr++ }
-        else if (result[i].department === "Methods") { meth++ }
-        else if (result[i].department === "IT") { it++ }
-      }
-      arr.push(fin); arr.push(acc); arr.push(mark); arr.push(hr); arr.push(meth); arr.push(it);
-      arr.push(sum);
-      res.send(arr);
-    }
-  });
-});
 
 router.get('/projectbudget', (req, res) => {
   Project.find({}, function (err, result) {
