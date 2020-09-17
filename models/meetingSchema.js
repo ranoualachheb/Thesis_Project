@@ -5,8 +5,10 @@ const MeetingSchema = new Schema({
   subject: {
     type: String,
   },
-
-  employees: {
+  HeadofDepartment: {
+    type: String,
+  },
+   employees: {
     type: Array,
   },
   date: {
