@@ -17,7 +17,7 @@ router.post('/create', (req, res) => {
     res.end();
   });
 });
-
+//
 router.post('/store', (req, res) => {
   var notification = new Notification(req.body);
   notification.save(function (err, result) {
