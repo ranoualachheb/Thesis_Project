@@ -9,6 +9,7 @@ router.get('/dashboardProject', (req, res) => {
     if (err) {
       res.send(err);
     } else {
+      var x = {}
       var arr = [];
       var fin = 0; var acc = 0; var mark = 0; var hr = 0; var meth = 0; var it = 0;
       var sum = result.length
