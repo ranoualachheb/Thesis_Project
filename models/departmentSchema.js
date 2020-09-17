@@ -5,6 +5,9 @@ const departmentSchema = new Schema({
   name: {
     type: String,
   },
+  department : {
+     type: String,
+  },
   headOfDepartment: {
     type: String,
   },
