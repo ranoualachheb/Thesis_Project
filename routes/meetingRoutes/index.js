@@ -6,8 +6,8 @@ const Notification = require('../../models/notificationSchema.js');
 router.post('/create', (req, res) => {
   const data = req.body;
   //   console.log(data);
-
-  var model = new Meeting(req.body);
+ 
+var model = new Meeting(req.body);
   model.save(function (err, result) {
     if (err) {
       res.send(err);
